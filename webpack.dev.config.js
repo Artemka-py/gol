@@ -1,10 +1,10 @@
-import path from "path";
-import { Configuration, HotModuleReplacementPlugin } from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
-const config: Configuration = {
+module.exports = {
   mode: "development",
   output: {
     publicPath: "/",
@@ -35,7 +35,6 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
-    new HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin({ async: false }),
     new ESLintPlugin({
       extensions: ["js", "jsx", "ts", "tsx"],
@@ -51,4 +50,4 @@ const config: Configuration = {
   },
 };
 
-export default config;
+// export default config;

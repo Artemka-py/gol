@@ -1,11 +1,11 @@
-import path from "path";
-import { Configuration } from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import ESLintPlugin from "eslint-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const config: Configuration = {
+module.exports = {
   mode: "production",
   entry: "./src/index.tsx",
   output: {
@@ -47,5 +47,3 @@ const config: Configuration = {
     new CleanWebpackPlugin(),
   ],
 };
-
-export default config;
